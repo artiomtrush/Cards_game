@@ -63,31 +63,3 @@ class Koloda(Cards):
 #k1.res_koloda()
 #k1.vb_koloda()
 #k1.perem_koloda()
-
-class Black_Jack(Koloda):
-
-    count = 0                                         # счетчик очков в игре
-
-    def __init__(self, number):                       # ввод количества карт в колоде
-        super().__init__(number)
-
-    def vid_kart(self):
-        super().perem_koloda()                        # перемешивание колоды
-        print(self.koloda.pop())
-        print(len(self.koloda))
-
-    def znack_kart(self):
-        if
-
-    #}
-
-
-d1 = Black_Jack(36)
-d1.vid_kart()
-
-
-
-
-
-
-
