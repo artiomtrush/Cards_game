@@ -114,61 +114,41 @@ class Koloda(Cards):
     """
     Выбор колоды. При вводе пользователем количества карт, формируется колода. Срезы нам немобходимы для првильного 
     вывода карт, т.к. у нас общий словарь значений для всех игр. 
+    После среза мы производит перемешивание колоды.
+    В цикле создана "защита от дурака", т.е. если пользователь вводит не существующую колоду, ему актоматически
+    предлагается сыграть в БлэкДжек
     """
 
     def vb_koloda(self):                                                #выбор колоды
         if self.number == 36:
-            self.koloda = self.koloda[36::]                             #создание колоды с 36 картами
+            self.res_koloda()
+            self.koloda = self.koloda[36::]  # Создание колоды с 36 картами
+            self.random.shuffle(self.koloda)  # Перемешивание колоды
             print("Вы выбрали колоду с 36 картами")
+            print(self.koloda)
+            print(len(self.koloda))
         elif self.number == 52:
-            self.koloda = self.koloda[20::]                             #создание колоды с 52 картами
+            self.res_koloda()
+            self.koloda = self.koloda[20::]  # Создание колоды с 52 картами
+            self.random.shuffle(self.koloda)
             print("Вы выбрали колоду с 52 картами")
+            print(self.koloda)
+            print(len(self.koloda))
         elif self.number == 108:
-            self.koloda_uno = self.koloda_uno[:108]                     #создание колоды игры в UNO картами
+            self.res_koloda_uno()
+            self.koloda_uno = self.koloda_uno[:108]  # Создание колоды игры в UNO картами
+            self.random.shuffle(self.koloda_uno)
             print("Вы выбрали колоду для игры в UNO с 108 картами")
+            print(self.koloda_uno)
+            print(len(self.koloda_uno))
         else:
-            print("Колоды с данным количеством карт не существует")
-            self.koloda = 0
+            print("Вы ввели неверное количество карт, поэтому Вам автоматически было предложено сыграть в БлэкДжек")
+            print("Выам выдана колода с 52 картами")
+            self.res_koloda()
+            self.koloda = self.koloda[20::]
+            self.random.shuffle(self.koloda)
+            print(self.koloda)
+            print(len(self.koloda))
 
-
-
-    def perem_koloda(self):                                             #перемешивание колоды
-        self.res_koloda()
-        self.res_koloda_uno()
-        self.vb_koloda()
-        self.random.shuffle(self.koloda)
-        self.random.shuffle(self.koloda_uno)
-        print(self.koloda)
-        print(len(self.koloda))
-        print(self.koloda_uno)
-        print(len(self.koloda_uno))
-
-
-k1 = Koloda(108)
-k1.res_koloda()
-k1.res_koloda_uno()
+k1 = Koloda(106)
 k1.vb_koloda()
-k1.perem_koloda()
-
-#class Black_Jack(Koloda):
-
-    #count = 0                                         # счетчик очков в игре
-
-    #def __init__(self, number):                       # ввод количества карт в колоде
-        #super().__init__(number)
-
-    #def vid_kart(self):
-        #super().perem_koloda()                        # перемешивание колоды
-        #print(self.koloda.pop())
-        #print(len(self.koloda))
-
-
-#d1 = Black_Jack(36)
-#d1.vid_kart()
-
-
-
-
-
-
-
