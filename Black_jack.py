@@ -199,10 +199,10 @@ class Black_Jack(Koloda):
 
     def ochki_card(self):                                   # Выдача карты с колоды и поиск веса
         self.a = self.koloda.pop()
+        print("Ваша карта", self.a)
         self.temp_2 = self.a.split(" ")[0]
         self.search_ochki()
         self.result()
-        self.nabor_card()
 
     """
     Функция поиска очков карт и добавление ее веса к счетчику.
@@ -226,9 +226,9 @@ class Black_Jack(Koloda):
 
     def result(self):
         if self.count < 21:
-            print("У Вас", self.count, "очков. Хотите набрать еще?")
+            print("У Вас", self.count, "очка(в)")
         elif self.count == 21:
-            print("У Вас", self.count, "очков. Вы ПОБЕДИЛИ!!!! Поздравляем")
+            print("У Вас", self.count, "очка(в)")
         else:
             print("Вы проиграли")
 
@@ -239,14 +239,27 @@ class Black_Jack(Koloda):
     """
 
     def nabor_card(self):
+        print("Вы хотите набрать еще карт?")
+        print("введите да/нет?")
         if input() == "да":
             self.ochki_card()
-        elif input() == "нет":
-            return ("У Вас", self.count, "очков")
         else:
-            pass
+            print("У Вас", self.count, "очков")
+
+
+    """
+    Функция первой раздачи. При первой раздаче выдает две карты, текущий счет очков, Спрашивает необходим ли донабор 
+    карт при помощи вызова функции nabor_card.
+    """
+
+    def first_razdacha(self):
+        self.ochki_card()
+        self.ochki_card()
+        self.nabor_card()
+
 
 
 b1 = Black_Jack(106)
 b1.vb_koloda()
-b1.ochki_card()
+#b1.ochki_card()
+b1.first_razdacha()
