@@ -2,22 +2,21 @@ class Cards:
     """
     Храним все значения для создания карт
     """
-
-    mast = {                                          #Существующие масти
+    mast = {  # Существующие масти
         "Буба": 'Буба',
         "Чирва": 'Чирва',
         "Кресте": 'Кресте',
         "Пика": 'Пика',
     }
 
-    colour = {                                        #Существующие цвета карт для игры UNO
+    colour = {  # Существующие цвета карт для игры UNO
         "Желтый": 'Желтая',
         "Красный": 'Красная',
         "Синий": 'Синяя',
         "Зеленый": 'Зеленая',
     }
 
-    znach = {                                         #Cуществующие значения карт для всех игр
+    znach = {  # Cуществующие значения карт для всех игр
         "Смена направления": 'Смена_направления',
         "+2": 'Плюс_Две',
         "Пропуск хода": 'Пропуск_хода',
@@ -38,21 +37,19 @@ class Cards:
         "Туз": 'Туз',
     }
 
-    black_aktiv_cards = {                               #Дополнительные значения карт для игры UNO
+    black_aktiv_cards = {  # Дополнительные значения карт для игры UNO
         "Смена цвета": 'Смена_цвета',
         "Смена цвета + 4": 'Смена цвета_+_4',
     }
 
 
 class Koloda(Cards):
-
     """
     Импортируем рандом для возможности перемешивания карт
     """
-
     import random
 
-    def __init__(self, number):                       #Вводим количество карт
+    def __init__(self, number):  # Вводим количество карт
         self.number = number
 
     """
@@ -60,7 +57,6 @@ class Koloda(Cards):
     Первая для игры в 21 либо БлэкДжек.
     Вторая для игры в UNO.
     """
-
     koloda = []
     koloda_uno = []
 
@@ -68,16 +64,17 @@ class Koloda(Cards):
     Проходимся по славорю znach и добавляем к его значениям масти карт из словаря mast.
     Тем самым формируем колоду для игра в Дурака или в БлэкДжек
     """
+
     def res_koloda(self):
         for v in self.znach.values():
             temp = v + " " + self.mast["Буба"]
-            self.koloda.append(temp)                  #добавление карт Буба в колоду
+            self.koloda.append(temp)  # Добавление карт Буба в колоду
             temp = v + " " + self.mast["Чирва"]
-            self.koloda.append(temp)                  #добавление карт Чирва в колоду
+            self.koloda.append(temp)  # Добавление карт Чирва в колоду
             temp = v + " " + self.mast["Кресте"]
-            self.koloda.append(temp)                  #добавление карт Кресте в колоду
+            self.koloda.append(temp)  # Добавление карт Кресте в колоду
             temp = v + " " + self.mast["Пика"]
-            self.koloda.append(temp)                  #добавление карт Пика в колоду
+            self.koloda.append(temp)  # Добавление карт Пика в колоду
 
     """
     В первой функции for создаем по 4 карты "Смена цвета" и "Смена цвета + 4".
@@ -89,18 +86,18 @@ class Koloda(Cards):
     def res_koloda_uno(self):
         for v in self.black_aktiv_cards.values():
             temp = self.black_aktiv_cards["Смена цвета"]
-            self.koloda_uno.append(temp)                     #добавление двух карт в колоду
-            self.koloda_uno.append(temp)                     #добавление двух карт в колоду, в итоге 4.
+            self.koloda_uno.append(temp)  # Добавление двух карт в колоду
+            self.koloda_uno.append(temp)  # Добавление двух карт в колоду, в итоге 4.
             temp = self.black_aktiv_cards["Смена цвета + 4"]
             self.koloda_uno.append(temp)
             self.koloda_uno.append(temp)
         for v in self.znach.values():
             temp = v + " " + self.colour["Желтый"]
             if v in self.znach["Ноль"]:
-                self.koloda_uno.append(temp)                  #добавление одной карты 0 в колоду
+                self.koloda_uno.append(temp)  # Добавление одной карты 0 в колоду
             else:
-                self.koloda_uno.append(temp)                  #добавление двух карт в колоду
-                self.koloda_uno.append(temp)                  #добавление двух карт в колоду
+                self.koloda_uno.append(temp)  # Добавление двух карт в колоду
+                self.koloda_uno.append(temp)  # Добавление двух карт в колоду
             temp = v + " " + self.colour["Красный"]
             if v in self.znach["Ноль"]:
                 self.koloda_uno.append(temp)
@@ -120,7 +117,6 @@ class Koloda(Cards):
                 self.koloda_uno.append(temp)
                 self.koloda_uno.append(temp)
 
-
     """
     Выбор колоды. При вводе пользователем количества карт, формируется колода. Срезы нам немобходимы для првильного 
     вывода карт, т.к. у нас общий словарь значений для всех игр. 
@@ -129,7 +125,7 @@ class Koloda(Cards):
     предлагается сыграть в БлэкДжек
     """
 
-    def vb_koloda(self):                                                #выбор колоды
+    def vb_koloda(self):  # выбор колоды
         if self.number == 36:
             self.res_koloda()
             self.koloda = self.koloda[36::]  # Создание колоды с 36 картами
@@ -155,7 +151,17 @@ class Koloda(Cards):
 
 class Black_Jack(Koloda):
 
-    count = 0  # Счетчик очков в игре
+    count = 0  # Счетчик очков в игре компьютера
+    count_1 = 1  # Счетчик очков в игре первого пользователя
+    count_2 = 2  # Счетчик очков в игре второго пользователя
+
+    def obnl_count_1(self):
+        self.count_1 = self.count
+        self.count = 0
+
+    def obnl_count_2(self):
+        self.count_2 = self.count
+        self.count = 0
 
     """
     Словарь со значением карт и их весом, т.е. очками за карту.
@@ -181,8 +187,10 @@ class Black_Jack(Koloda):
     Наследование вводимых числа вводимых карт
     """
 
-    def __init__(self, number):  # Ввод количества карт в колоде
+    def __init__(self, number, player):  # Ввод количества карт в колоде и числа игроков
         super().__init__(number)
+        self.player = player
+
 
     """
     Наследование функции создания и переменшивания колоды
@@ -197,7 +205,7 @@ class Black_Jack(Koloda):
     значения (т.к. для нас не важна масть карты, а важно значение карты). После поиска прибавляет значение к счетчику.
     """
 
-    def ochki_card(self):                                   # Выдача карты с колоды и поиск веса
+    def ochki_card(self):  # Выдача карты с колоды и поиск веса
         self.a = self.koloda.pop()
         print("Ваша карта", self.a)
         self.temp_2 = self.a.split(" ")[0]
@@ -207,13 +215,17 @@ class Black_Jack(Koloda):
     """
     Функция поиска очков карт и добавление ее веса к счетчику.
     Ищет ключ в словаре, затем преобрадует строку в число и добавляет число к счетчику.
+    Если находит Туз, то спрашивает что использовать 1 или 11
     """
 
     def search_ochki(self):  # Функция поиска веса карты в значениях
         if self.temp_2 in self.ochki.keys():  # Поиск значения в словаре
             self.x = self.ochki[self.temp_2]  # Присваивание временному значению веса карты
             self.x = int(self.x)  # Преобразование из строки в число
-            self.count += self.x  # Добавление веса карты к счетчику очков
+            if self.x == 11:
+                print("Вы хотите использовать Туз как 11 или 1")
+                self.x = input() # Ввод 11 или 1
+            self.count += int(self.x)  # Добавление веса карты к счетчику очков
         else:
             pass
 
@@ -230,7 +242,7 @@ class Black_Jack(Koloda):
         elif self.count == 21:
             print("У Вас", self.count, "очка(в)")
         else:
-            print("Вы проиграли")
+            print("У Вас", self.count, "очка(в)")
 
 
     """
@@ -241,25 +253,75 @@ class Black_Jack(Koloda):
     def nabor_card(self):
         print("Вы хотите набрать еще карт?")
         print("введите да/нет?")
-        if input() == "да":
+        while input() == "да":
             self.ochki_card()
         else:
             print("У Вас", self.count, "очков")
 
-
     """
     Функция первой раздачи. При первой раздаче выдает две карты, текущий счет очков, Спрашивает необходим ли донабор 
-    карт при помощи вызова функции nabor_card.
+    карт при помощи вызова функции набор карт.
     """
 
     def first_razdacha(self):
         self.ochki_card()
         self.ochki_card()
-        self.nabor_card()
+
+    """
+    Алгоритм просчета вероятноти для компьютера. Пользователь сам будет выбирать брать ему карту или нет.
+    """
+
+    def algor_ver(self):
+        if 21 - self.count > 11:
+            self.ochki_card()
+        elif 21 - self.count >= 5:
+            self.ochki_card()
+        else:
+            pass
 
 
+    def game(self):
+        self.vid_kart()
+        if self.player == 1:
+            self.first_razdacha()    #раздача карт пользователю
+            self.nabor_card()
+            self.obnl_count_1()
+            self.first_razdacha()    #раздача карт компьютеру
+            self.algor_ver()
+            self.algor_ver()
+            if self.count >= self.count_1 and self.count < 21:
+                print("Вы проиграли, компьютер победил. У компьютера", self.count, "очков,у Вас",self.count_1,"очков")
+            elif self.count < self.count_1 and self.count_1 < 21:
+                print("Вы выйграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
+            elif self.count < 21 and self.count_1 > 21:
+                print("Вы проиграли, компьютер победил. У компьютера", self.count, "очков,у Вас",self.count_1,"очков")
+            elif self.count > 21 and self.count_1 < 21:
+                print("Вы выйграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
+            elif self.count == self.count_1 < 21:
+                print("Ничия", self.count, "очков,у Вас", self.count_1, "очков")
+            else:
+                print("Вы оба проиграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
+        if self.player == 2:
+            print("Набирает карты Игрок №1")
+            self.first_razdacha()    #раздача карт пользователю
+            self.nabor_card()
+            self.obnl_count_1()
+            print("Набирает карты Игрок №2")
+            self.first_razdacha()    #раздача карт втрому пользователю
+            self.nabor_card()
+            self.obnl_count_2()
+            print("Набирает карты Компьютер")
+            self.first_razdacha()    #раздача карт компьютеру
+            self.algor_ver()
+            self.algor_ver()
+            if self.count >= self.count_1 and self.count > self.count_2 and self.count < 21:
+                print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
+            elif self.count_1 >= self.count and self.count_1 > self.count_2 and self.count_1 < 21:
+                print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
+            elif self.count_2 >= self.count and self.count_2 > self.count_1 and self.count_2 < 21:
+                print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
+            else:
+                print("Вы все проиграли", "Компьютер", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
 
-b1 = Black_Jack(106)
-b1.vb_koloda()
-#b1.ochki_card()
-b1.first_razdacha()
+b1 = Black_Jack(52, 2)
+b1.game()
