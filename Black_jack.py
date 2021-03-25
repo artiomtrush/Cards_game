@@ -289,7 +289,7 @@ class Black_Jack(Koloda):
             self.first_razdacha()    #раздача карт компьютеру
             self.algor_ver()
             self.algor_ver()
-            if self.count >= self.count_1 and self.count < 21:
+            if self.count > self.count_1 and self.count <= 21:
                 print("Вы проиграли, компьютер победил. У компьютера", self.count, "очков,у Вас",self.count_1,"очков")
             elif self.count < self.count_1 and self.count_1 < 21:
                 print("Вы выйграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
@@ -314,11 +314,29 @@ class Black_Jack(Koloda):
             self.first_razdacha()    #раздача карт компьютеру
             self.algor_ver()
             self.algor_ver()
-            if self.count >= self.count_1 and self.count > self.count_2 and self.count < 21:
+            if self.count <= 21 and self.count > self.count_1 and self.count > self.count_2:
                 print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
-            elif self.count_1 >= self.count and self.count_1 > self.count_2 and self.count_1 < 21:
+            elif self.count <= 21 and self.count > self.count_1 and self.count_2 > 21:
+                print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
+            elif self.count <= 21 and self.count > self.count_2 and self.count_1 > 21:
+                print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
+            elif self.count <= 21 and self.count_1 > 21 and self.count_2 > 21:
+                print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
+            elif self.count_1 <= 21 and self.count_1 > self.count and self.count_1 > self.count_2:
                 print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
-            elif self.count_2 >= self.count and self.count_2 > self.count_1 and self.count_2 < 21:
+            elif self.count_1 <= 21 and self.count_1 > self.count_2 and self.count > 21:
+                print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
+            elif self.count_1 <= 21 and self.count_1 > self.count and self.count_2 > 21:
+                print("Игрок 1 победил", self.count_1, "Компьютер", self.count, "очков", "Игрок 2", self.count_2)
+            elif self.count_1 <= 21 and self.count_1 > 21 and self.count > 21:
+                print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
+            elif self.count_2 <= 21 and self.count_2 > self.count and self.count_2 > self.count_1:
+                print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
+            elif self.count_2 <= 21 and self.count_2 > self.count_1 and self.count > 21:
+                print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
+            elif self.count_2 <= 21 and self.count_2 > self.count and self.count_1 > 21:
+                print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
+            elif self.count_2 <= 21 and self.count > 21 and self.count_1 > 21:
                 print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
             else:
                 print("Вы все проиграли", "Компьютер", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
