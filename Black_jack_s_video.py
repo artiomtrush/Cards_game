@@ -347,9 +347,9 @@ class Black_Jack(Koloda):
                 print("Вы оба проиграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
                 print("Ваши деньги отправлены на благотварительность")
                 self.video()
-        print("Введите ставку второго игрока")
-        money_2 = input()
         if self.player == 2:
+            print("Введите ставку второго игрока")
+            money_2 = input()
             print("Набирает карты Игрок №1")
             self.first_razdacha()    #раздача карт пользователю
             self.nabor_card()
