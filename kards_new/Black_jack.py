@@ -5,10 +5,10 @@ class Black_Jack(Koloda):
 
     import logging
 
-
     count = 0  # Counts dealer
     count_1 = 0  # Count first players
     count_2 = 0  # Count second players
+    count_player = [] # Count all players
 
     """
      Functions for resetting players` points counters. 
@@ -122,11 +122,19 @@ class Black_Jack(Koloda):
     Function search winner.
     """
     def search_win(self):
-        for v in self.count.values():
-            if v <= 21 and v != 0:
-                print("Player with", v, " points win")
-            else:
-                pass
+        if self.player == '1':
+            if self.count > 21:
+                print("You lost your money. Your bet were", self.money_1, "cash.")
+
+        else:
+            for num in self.count, self.count_1, self.count_2:
+                if num <= 21 and num != 0:
+                    self.count_player.append(num)
+                else:
+                    pass
+            print("Player with", max(self.count_player), "points win.")
+
+            "Надо добавить ссумарный счет выйгранных денег"
 
     """
     Game play alone.
@@ -139,6 +147,7 @@ class Black_Jack(Koloda):
         self.first_razdacha()
         time.sleep(1)
         self.nabor_card()
+        self.search_win()
 
     """
     Game dealer.
@@ -162,6 +171,7 @@ class Black_Jack(Koloda):
         self.game_dealer()
         print("Player has", self.count_1,"points\n"
                                        "Dealer has", self.count,"points.")
+        self.search_win()
 
     """
     Game Black Jack.
@@ -176,91 +186,11 @@ class Black_Jack(Koloda):
 
     logging.basicConfig(level=logging.DEBUG, filename='Black_JacK.log')
 
-
-
-    # def game(self):
-    #     print("Введите ставку первого игрока")
-    #     money_1 = input()
-    #     print("Ставка компьютера")
-    #     money = input()
-    #     if self.player == '1':
-    #         self.first_razdacha()    #раздача карт пользователю
-    #         self.nabor_card()
-    #         self.obnl_count_1()
-    #         self.first_razdacha()    #раздача карт компьютеру
-    #         self.algor_ver()
-    #         self.algor_ver()
-    #         if self.count > self.count_1 and self.count <= 21:
-    #             print("Вы проиграли, компьютер победил. У компьютера", self.count, "очков,у Вас",self.count_1,"очков")
-    #             print("Компьютер выйграл", money_1, "денег")
-    #         elif self.count < self.count_1 and self.count_1 <= 21:
-    #             print("Вы выйграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
-    #             print("Вы выйграли", money, "денег")
-    #         elif self.count <= 21 and self.count_1 > 21:
-    #             print("Вы проиграли, компьютер победил. У компьютера", self.count, "очков,у Вас",self.count_1,"очков")
-    #             print("Компьютер выйграл", money_1, "денег")
-    #         elif self.count > 21 and self.count_1 <= 21:
-    #             print("Вы выйграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
-    #             print("Вы выйграли", money, "денег")
-    #         elif self.count == self.count_1 and self.count < 21 and self.count_1 < 21:
-    #             print("Ничия", self.count, "очков,у Вас", self.count_1, "очков")
-    #             print("Ваши деньги Вам вернулись")
-    #         else:
-    #             print("Вы оба проиграли. У компьютера", self.count, "очков,у Вас", self.count_1, "очков")
-    #             print("Ваши деньги отправлены на благотварительность")
-    #     if self.player == '2':
-    #         print("Введите ставку второго игрока")
-    #         money_2 = input()
-    #         print("Набирает карты Игрок №1")
-    #         self.first_razdacha()    #раздача карт пользователю
-    #         self.nabor_card()
-    #         self.obnl_count_1()
-    #         print("Набирает карты Игрок №2")
-    #         self.first_razdacha()    #раздача карт втрому пользователю
-    #         self.nabor_card()
-    #         self.obnl_count_2()
-    #         print("Набирает карты Компьютер")
-    #         self.first_razdacha()    #раздача карт компьютеру
-    #         self.algor_ver()
-    #         self.algor_ver()
-    #         if self.count <= 21 and self.count > self.count_1 and self.count > self.count_2:
-    #             print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money_1) + int(money_2), "Денег")
-    #         elif self.count <= 21 and self.count > self.count_1 and self.count_2 > 21:
-    #             print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money_1) + int(money_2), "Денег")
-    #         elif self.count <= 21 and self.count > self.count_2 and self.count_1 > 21:
-    #             print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money_1) + int(money_2), "Денег")
-    #         elif self.count <= 21 and self.count_1 > 21 and self.count_2 > 21:
-    #             print("Компьютер победил", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money_1) + int(money_2), "Денег")
-    #         elif self.count_1 <= 21 and self.count_1 > self.count and self.count_1 > self.count_2:
-    #             print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money) + int(money_2), "Денег")
-    #         elif self.count_1 <= 21 and self.count_1 > self.count_2 and self.count > 21:
-    #             print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money) + int(money_2), "Денег")
-    #         elif self.count_1 <= 21 and self.count_1 > self.count and self.count_2 > 21:
-    #             print("Игрок 1 победил", self.count_1, "Компьютер", self.count, "очков", "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money) + int(money_2), "Денег")
-    #         elif self.count_1 <= 21 and self.count_1 > 21 and self.count > 21:
-    #             print("Игрок 1 победил", self.count_1, "Компьютер",self.count,"очков", "Игрок 2", self.count_2)
-    #             print("Компьютер выйграл", int(money) + int(money_2), "Денег")
-    #         elif self.count_2 <= 21 and self.count_2 > self.count and self.count_2 > self.count_1:
-    #             print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
-    #             print("Компьютер выйграл", int(money) + int(money_1), "Денег")
-    #         elif self.count_2 <= 21 and self.count_2 > self.count_1 and self.count > 21:
-    #             print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
-    #             print("Компьютер выйграл", int(money) + int(money_1), "Денег")
-    #         elif self.count_2 <= 21 and self.count_2 > self.count and self.count_1 > 21:
-    #             print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
-    #             print("Компьютер выйграл", int(money) + int(money_1), "Денег")
-    #         elif self.count_2 <= 21 and self.count > 21 and self.count_1 > 21:
-    #             print("Игрок 2 победил", self.count_2, "Компьютер",self.count,"очков", "Игрок 1", self.count_1)
-    #             print("Компьютер выйграл", int(money) + int(money_1), "Денег")
-    #         else:
-    #             print("Вы все проиграли", "Компьютер", self.count, "Игрок 1", self.count_1, "Игрок 2", self.count_2)
+    "1. При запуске игры с компрьютером два раза происходит выполнение операции победителя"
+    "2. Дописать действия при 3 -4"
+    "3. Подключить видео"
+    "4. Переделать алгоритм компьюетра через while true"
+    "5. Добавить в логи время"
 
 b1 = Black_Jack()
 

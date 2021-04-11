@@ -45,3 +45,181 @@ DEBUG:root:Card gave 4 Пика
 DEBUG:root:Sum points 15
 DEBUG:root:Card gave Валет Пика
 DEBUG:root:Sum points 25
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 8 Буба
+DEBUG:root:Sum points 8
+DEBUG:root:Card gave 8 Кресте
+DEBUG:root:Sum points 16
+DEBUG:root:Card gave 2 Чирва
+DEBUG:root:Sum points 2
+DEBUG:root:Card gave 6 Кресте
+DEBUG:root:Sum points 8
+DEBUG:root:Card gave 4 Кресте
+DEBUG:root:Sum points 12
+DEBUG:root:Card gave Король Пика
+DEBUG:root:Sum points 22
+DEBUG:root:User enter 2
+DEBUG:root:Card gave Дама Пика
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave Валет Кресте
+DEBUG:root:Sum points 20
+DEBUG:root:Card gave 3 Пика
+DEBUG:root:Sum points 3
+DEBUG:root:Card gave Туз Пика
+DEBUG:root:User enter 11
+DEBUG:root:Sum points 14
+DEBUG:root:Card gave Валет Буба
+DEBUG:root:Sum points 24
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 3 Буба
+DEBUG:root:Sum points 3
+DEBUG:root:Card gave Король Буба
+DEBUG:root:Sum points 13
+DEBUG:root:Card gave 10 Чирва
+DEBUG:root:Sum points 23
+DEBUG:root:Card gave Валет Пика
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 2 Чирва
+DEBUG:root:Sum points 12
+DEBUG:root:Card gave 3 Кресте
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave 10 Кресте
+DEBUG:root:Sum points 25
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 5 Кресте
+DEBUG:root:Sum points 5
+DEBUG:root:Card gave Валет Кресте
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave 8 Буба
+DEBUG:root:Sum points 8
+DEBUG:root:Card gave Дама Чирва
+DEBUG:root:Sum points 18
+DEBUG:root:User enter 1
+DEBUG:root:Card gave Дама Буба
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 5 Буба
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave Дама Пика
+DEBUG:root:Sum points 25
+DEBUG:root:User enter 1
+DEBUG:root:Card gave Валет Кресте
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 6 Пика
+DEBUG:root:Sum points 16
+DEBUG:root:Card gave 5 Пика
+DEBUG:root:Sum points 21
+DEBUG:root:Card gave 7 Пика
+DEBUG:root:Sum points 28
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 5 Кресте
+DEBUG:root:Sum points 5
+DEBUG:root:Card gave 2 Пика
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave Валет Кресте
+DEBUG:root:Sum points 17
+DEBUG:root:Card gave Туз Кресте
+DEBUG:root:User enter 11
+DEBUG:root:Sum points 11
+DEBUG:root:Card gave 9 Чирва
+DEBUG:root:Sum points 20
+DEBUG:root:User enter 2
+DEBUG:root:Card gave Король Чирва
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 8 Буба
+DEBUG:root:Sum points 18
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 4 Буба
+DEBUG:root:Sum points 4
+DEBUG:root:Card gave Дама Кресте
+DEBUG:root:Sum points 14
+DEBUG:root:User enter 2
+DEBUG:root:Card gave Валет Пика
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave Валет Кресте
+DEBUG:root:Sum points 20
+DEBUG:root:User enter 1
+DEBUG:root:Card gave 3 Буба
+DEBUG:root:Sum points 3
+DEBUG:root:Card gave 4 Буба
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave 4 Чирва
+DEBUG:root:Sum points 11
+DEBUG:root:Card gave 2 Буба
+DEBUG:root:Sum points 13
+DEBUG:root:Card gave Дама Чирва
+DEBUG:root:Sum points 23
+DEBUG:root:User enter 1
+DEBUG:root:Card gave 10 Кресте
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 9 Кресте
+DEBUG:root:Sum points 19
+DEBUG:root:Card gave Король Чирва
+DEBUG:root:Sum points 29
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 8 Буба
+DEBUG:root:Sum points 8
+DEBUG:root:Card gave 8 Кресте
+DEBUG:root:Sum points 16
+DEBUG:root:Card gave 3 Кресте
+DEBUG:root:Sum points 3
+DEBUG:root:Card gave 7 Кресте
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 5 Пика
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave 10 Кресте
+DEBUG:root:Sum points 25
+DEBUG:root:User enter 2
+DEBUG:root:Card gave Король Чирва
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave Король Пика
+DEBUG:root:Sum points 20
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 6 Пика
+DEBUG:root:Sum points 6
+DEBUG:root:Card gave 9 Пика
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave Дама Буба
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 2 Чирва
+DEBUG:root:Sum points 12
+DEBUG:root:Card gave 2 Буба
+DEBUG:root:Sum points 14
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 6 Кресте
+DEBUG:root:Sum points 6
+DEBUG:root:Card gave 3 Буба
+DEBUG:root:Sum points 9
+DEBUG:root:Card gave Туз Чирва
+DEBUG:root:User enter 11
+DEBUG:root:Sum points 20
+DEBUG:root:Card gave 6 Чирва
+DEBUG:root:Sum points 6
+DEBUG:root:Card gave 9 Пика
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave 4 Пика
+DEBUG:root:Sum points 19
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 4 Кресте
+DEBUG:root:Sum points 4
+DEBUG:root:Card gave 3 Кресте
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave 5 Чирва
+DEBUG:root:Sum points 12
+DEBUG:root:Card gave Туз Чирва
+DEBUG:root:User enter 1
+DEBUG:root:Sum points 13
+DEBUG:root:Card gave 3 Пика
+DEBUG:root:Sum points 16
+DEBUG:root:Card gave Дама Буба
+DEBUG:root:Sum points 26
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 2 Кресте
+DEBUG:root:Sum points 2
+DEBUG:root:Card gave 7 Кресте
+DEBUG:root:Sum points 9
+DEBUG:root:Card gave Король Кресте
+DEBUG:root:Sum points 19
+DEBUG:root:Card gave 7 Чирва
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave Король Чирва
+DEBUG:root:Sum points 17
