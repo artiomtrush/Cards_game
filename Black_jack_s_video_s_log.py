@@ -428,7 +428,7 @@ class Black_Jack(Koloda):
 
 
 
-    logging.basicConfig(level=logging.DEBUG, filename='Black_JacK.log')
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s', filename='Black_JacK.log')
 
 b1 = Black_Jack(52,1)
 b1.game()

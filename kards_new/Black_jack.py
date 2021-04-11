@@ -184,13 +184,12 @@ class Black_Jack(Koloda):
         elif self.player == '2':
             self.game_with_dealer()
 
-    logging.basicConfig(level=logging.DEBUG, filename='Black_JacK.log')
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s', filename='Black_JacK.log')
 
     "1. При запуске игры с компрьютером два раза происходит выполнение операции победителя"
     "2. Дописать действия при 3 -4"
     "3. Подключить видео"
     "4. Переделать алгоритм компьюетра через while true"
-    "5. Добавить в логи время"
 
 b1 = Black_Jack()
 
