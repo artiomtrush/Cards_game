@@ -1,0 +1,47 @@
+DEBUG:root:пользователь ввел50
+DEBUG:root:пользователь ввел50
+DEBUG:root:деньги первого пользователя, его общие очки 50,  0
+DEBUG:root:деньги второго пользователя, его общие очки  50, 1
+DEBUG:root:Очик первого пользователя 0,
+второго пользователя 1, 
+третьего пользователя2
+DEBUG:root:User enter 2
+DEBUG:root:Card gave Король Кресте
+DEBUG:root:Sum points 10
+DEBUG:root:Card gave 8 Пика
+DEBUG:root:Sum points 18
+DEBUG:root:Card gave 6 Пика
+DEBUG:root:Sum points 6
+DEBUG:root:Card gave Валет Чирва
+DEBUG:root:Sum points 16
+DEBUG:root:Card gave 2 Кресте
+DEBUG:root:Sum points 18
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 7 Пика
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave 10 Кресте
+DEBUG:root:Sum points 17
+DEBUG:root:Card gave 8 Пика
+DEBUG:root:Sum points 8
+DEBUG:root:Card gave 5 Пика
+DEBUG:root:Sum points 13
+DEBUG:root:Card gave 4 Буба
+DEBUG:root:Sum points 17
+DEBUG:root:User enter 2
+DEBUG:root:Card gave 2 Буба
+DEBUG:root:Sum points 2
+DEBUG:root:Card gave 5 Чирва
+DEBUG:root:Sum points 7
+DEBUG:root:Card gave 2 Кресте
+DEBUG:root:Sum points 9
+DEBUG:root:Card gave Туз Кресте
+DEBUG:root:User enter 11
+DEBUG:root:Sum points 20
+DEBUG:root:Card gave 4 Чирва
+DEBUG:root:Sum points 4
+DEBUG:root:Card gave 7 Чирва
+DEBUG:root:Sum points 11
+DEBUG:root:Card gave 4 Пика
+DEBUG:root:Sum points 15
+DEBUG:root:Card gave Валет Пика
+DEBUG:root:Sum points 25
